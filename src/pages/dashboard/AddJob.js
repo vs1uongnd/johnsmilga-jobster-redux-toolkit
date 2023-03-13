@@ -12,7 +12,6 @@ import { useEffect } from "react";
 
 function AddJob() {
   const {
-    isLoading,
     position,
     company,
     jobLocation,
@@ -53,7 +52,8 @@ function AddJob() {
     if (!isEditing) {
       dispatch(handleChange({ name: "jobLocation", value: user.location }));
     }
-  }, []);
+    // eslint-disable-next-line
+  }, [dispatch, isEditing]);
   return (
     <Wrapper>
       <form className="form">
